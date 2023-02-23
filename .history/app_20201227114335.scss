@@ -1,0 +1,47 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+.form-layout {
+  max-width: 500px;
+  margin: 50px auto;
+}
+.form-group {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  grid-column-gap: 40px;
+}
+.form-input {
+  padding: 10px;
+  border: 1px solid #f00;
+  outline: none;
+  width: 100%;
+}

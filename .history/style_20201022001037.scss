@@ -1,0 +1,68 @@
+$blue-color: #42a7fe;
+$green-color: #00c899;
+$primary: #fa4c53;
+$secondary: #fd9c84;
+$gradient: linear-gradient(to right, $primary, $secondary);
+$text-color: #291667;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin maxWidth($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin flexbox(
+  $align: flex-start,
+  $justify: flex-start,
+  $flex-direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+.square {
+  @include size(5rem);
+  background-color: #fff;
+  box-shadow: 6rem 0 0 0 white, 12rem 0 0 white, 0 6rem 0 0 white,
+    6rem 6rem 0 0 white, 12rem 6rem 0 0 white, 0 12rem 0 0 white,
+    6rem 12rem 0 0 white, 12rem 12rem 0 0 white;
+}

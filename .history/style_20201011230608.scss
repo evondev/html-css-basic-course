@@ -1,0 +1,135 @@
+$blue-color: #42a7fe;
+$green-color: #00c899;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.work {
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+  &__heading {
+    color: #1a0a3b;
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    // border-bottom: 4px solid $green-color;
+    // display: inline-block;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include size(3.5rem, 6px);
+      border-radius: 4px;
+      background-color: $green-color;
+    }
+  }
+  &__filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  &-tab {
+    display: flex;
+    &__item {
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      border: 1px solid $green-color;
+      text-align: center;
+      border-radius: 2rem 0 2rem 2rem;
+      transition: all 0.2s ease;
+      &:hover {
+        color: white;
+        background-color: $green-color;
+      }
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+  }
+  &__all {
+    display: inline-block;
+    padding: 5px 1rem;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    color: $green-color;
+    background-color: rgba($green-color, 0.25);
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1.5rem;
+  }
+  &__item {
+    width: calc(25% - 1.5rem);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 1.5rem;
+  }
+  &__image {
+    @include size(100%);
+    object-fit: cover;
+    object-position: top;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .work {
+    &__item {
+      width: calc(50% - 1.5rem);
+      margin-bottom: 1.5rem;
+    }
+    &__list {
+      margin-top: 2rem;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .work {
+    &__item {
+      width: 100%;
+    }
+    &__filter {
+      flex-direction: column;
+    }
+    &-tab {
+      flex-wrap: wrap;
+      justify-content: center;
+      &__item {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1279px), (min-width: 1024px) {
+  .work {
+    display: none;
+  }
+}
+// 320 480 768 1024 1280 1366 1440 1600 1920
+// min-width: 1024 -> >= 1024px
+// max-width: 1023-> <= 1023
+@media screen and (min-width: 1024px) {
+}

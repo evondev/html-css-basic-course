@@ -1,0 +1,47 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+body,
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+.boxed {
+  width: 300px;
+  height: 200px;
+  overflow-y: auto;
+}
+.boxed::-webkit-scrollbar {
+  width: 8px;
+}
+
+.boxed::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.boxed::-webkit-scrollbar-thumb {
+  background-color: #07a787;
+}

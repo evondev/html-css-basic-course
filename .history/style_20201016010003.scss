@@ -1,0 +1,116 @@
+$blue-color: #42a7fe;
+$green-color: #00c899;
+$primary: #fa4c53;
+$secondary: #fd9c84;
+$gradient: linear-gradient(to right, $primary, $secondary);
+$text-color: #291667;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin maxWidth($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin flexbox(
+  $align: flex-start,
+  $justify: flex-start,
+  $flex-direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+body {
+  background-color: white;
+  color: white;
+  background: url("https://cdn.dribbble.com/users/1665329/screenshots/14260517/media/8275ee1bc952b7bd6e3e87c31436dcf6.png")
+    no-repeat center / cover;
+  height: 100vh;
+}
+.container {
+  margin: 0 auto;
+  height: 500px;
+  position: relative;
+  &:before {
+    content: "";
+    @include size(100%);
+    background-image: linear-gradient(to right bottom, #07047e, #1a3bda);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @supports (
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 40% 80%, 39% 85%, 0 100%)
+    ) {
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 40% 80%, 39% 85%, 0 100%);
+      -webkit-clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 70%,
+        40% 80%,
+        39% 85%,
+        0 100%
+      );
+    }
+  }
+  // 07047E
+  // 1A3BDA
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(black, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: opacity(5);
+  -webkit-backdrop-filter: opacity(5);
+}
+.content {
+  width: 70vh;
+  height: 70vh;
+  padding: 5rem;
+  background-color: #fff;
+}

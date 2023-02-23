@@ -1,0 +1,39 @@
+$primary-color: #00aefd;
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+p {
+  color: $primary-color;
+}
+.header {
+  &-top {
+    color: red;
+    &:hover {
+      color: orange;
+    }
+  }
+  &-content {
+    font-size: 10rem;
+  }
+}
+// .header {}
+// .header-top:hover{}
+// .header-content{}
+// .header-content:hover{}
+// .header-content:before{}
+// .header-content:hover:before{}
+// @mixin mixinName(){}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+.boxed {
+  // width: 10rem;
+  // height: 10rem;
+  @include size(10rem, 20rem);
+  background-color: red;
+}

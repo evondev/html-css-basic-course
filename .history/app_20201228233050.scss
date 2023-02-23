@@ -1,0 +1,62 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+.input-focus {
+  width: 500px;
+  margin: 25px auto;
+  position: relative;
+}
+.input-focus-text {
+  font-size: 12px;
+  color: #ccc;
+  font-family: "Poppins";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s linear;
+}
+.input-focus-field {
+  font-family: "Poppins";
+  padding: 15px;
+  border: 1px solid #eee;
+  outline: none;
+  border-radius: 8px;
+  transition: all 0.2s linear;
+  display: block;
+  width: 100%;
+  &:focus {
+    border-color: #2979ff;
+  }
+  &:focus + .input-focus-text {
+    transform: translateY(-20px);
+  }
+}

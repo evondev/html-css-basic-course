@@ -1,0 +1,47 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+body,
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+.card {
+  width: 300px;
+  margin: 25px auto;
+  border: 1px solid #ccc;
+}
+.card-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  color: #1a1c28;
+}

@@ -1,0 +1,31 @@
+$blue-color: #42a7fe;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.work {
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+  &__heading {
+    color: #1a0a3b;
+  }
+}

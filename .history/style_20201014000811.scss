@@ -1,0 +1,207 @@
+$blue-color: #42a7fe;
+$green-color: #00c899;
+$primary: #fc556f;
+$secondary: #fd9c84;
+$gradient: linear-gradient(to right, $primary, $secondary);
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  padding: 2rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin maxWidth($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin flexbox(
+  $align: flex-start,
+  $justify: flex-start,
+  $flex-direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+.checkbox {
+  &__input {
+    display: none;
+    &:checked + .checkbox__label:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__label {
+    position: relative;
+    padding-left: 5rem;
+    cursor: pointer;
+    &:before {
+      content: "";
+      @include size(4rem);
+      background-color: #fc556f;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 1rem;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      @include size(2rem, 1rem);
+      transform: rotate(-45deg);
+      border-left: 3px solid white;
+      border-bottom: 3px solid white;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.25s linear;
+    }
+  }
+}
+.radio {
+  margin: 5rem;
+  &__input {
+    display: none;
+    &:checked + .radio__label:before {
+      background-color: #fc556f;
+      // border: 2px solid #b7c1cb;
+      box-shadow: 0 0 0 4px #fff, 0 0 0 6px #fc556f;
+    }
+  }
+  &__label {
+    position: relative;
+    padding-left: 5rem;
+    cursor: pointer;
+    &:before {
+      content: "";
+      @include size(2.5rem);
+      border-radius: 3rem;
+      background-color: #eee;
+      // border: 2px solid #b7c1cb;
+      // box-shadow: 0 0 0 4px #fff, 0 0 0 6px #fc556f;
+      box-shadow: 0 0 0 4px #eee, 0 0 0 6px #b7c1cb;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.25s ease;
+    }
+  }
+}
+.file {
+  @include size(10rem);
+  border-radius: 1rem;
+  background-color: rgba($secondary, 0.5);
+  position: relative;
+  color: white;
+  &__input {
+    display: none;
+  }
+  &__label {
+    @include flexbox(center, center);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+.checkbox2 {
+  &__input {
+    display: none;
+    &:checked + .checkbox2__label {
+      background-color: #7f6cfa;
+      .checkbox2__spin {
+        transform: translateX(5rem);
+      }
+    }
+  }
+  &__label {
+    display: inline-block;
+    @include size(10rem, 5rem);
+    background-color: #ccc;
+    // 7F6CFA
+    border-radius: 5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.25s linear;
+  }
+  &__spin {
+    @include size(4rem);
+    background-color: white;
+    border-radius: 4rem;
+    transition: 0.25s linear;
+  }
+}
+.input-style {
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #b7c1cb;
+  width: 100%;
+  color: #0e1e35;
+  font-size: 1.6rem;
+  outline: none;
+  transition: all 0.25s linear;
+  resize: none;
+  &::-webkit-input-placeholder {
+    color: #b7c1cb;
+  }
+  &:focus {
+    box-shadow: 0 0 0 4px #ffe1de;
+    border-color: #ff695a;
+  }
+}
+.button-style {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 0;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  background-color: #fd607d;
+  transition: all 0.25s linear;
+  box-shadow: 0 5px 0 0 #93263a;
+  &:hover {
+    background-color: #ffe1de;
+    color: #fd607d;
+  }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 0 #93263a;
+  }
+}

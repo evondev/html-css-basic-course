@@ -1,0 +1,99 @@
+$blue-color: #42a7fe;
+$green-color: #00c899;
+$primary: #fa4c53;
+$secondary: #fd9c84;
+$gradient: linear-gradient(to right, $primary, $secondary);
+$text-color: #291667;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  padding: 2rem;
+}
+input,
+textarea,
+button,
+select {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin maxWidth($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin flexbox(
+  $align: flex-start,
+  $justify: flex-start,
+  $flex-direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+body {
+  background-color: #131933;
+}
+.loading {
+  margin: 5rem auto;
+  @include size(7rem);
+  position: relative;
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(var(--value) * 45deg));
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border: 4px solid #00aefd;
+      border-radius: 5rem;
+      filter: hue-rotate(calc(var(--value) * 45deg));
+      animation: loading 2s infinite linear;
+    }
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: scale(0);
+  }
+}
+
+// circle = 360 deg
+// 360 / 8 = 45
